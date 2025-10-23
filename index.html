@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/global.css" />
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./assets/fontawesome/css/all.min.css" />
+    <script src="./javascript/index.js" defer></script>
     <title>Home | Central de Imóveis</title>
   </head>
   <body>
@@ -44,7 +45,7 @@
       <section id="home-hero">
         <div id="espelho">
           <div id="div-buscar" style="display: none">
-            <input type="text" />
+            <input type="text" id="input-codigo" />
             <button><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
           </div>
           <div id="hero-content">
@@ -78,9 +79,9 @@
             </select>
             <button><i class="fa-solid fa-filter"></i> Buscar</button>
           </div>
-          <button id="btn-buscar-codigo">
+          <button id="btn-trocar-filtro">
             <i class="fa-solid fa-magnifying-glass"></i>
-            Buscar por Código
+            Buscar Por Código
           </button>
         </div>
       </section>
@@ -99,6 +100,30 @@
       <section id="destaques-vendas"></section>
       <section id="destaques-locacao"></section>
     </main>
-    <footer></footer>
+    <footer>
+      <div>
+        <img src="./assets/ico.png" alt="" />
+        <h3>Central de Imóveis</h3>
+        <p>CRECI: 29459 J</p>
+      </div>
+      <div>
+        <h3>Contatos</h3>
+        <p><i class="fa-brands fa-whatsapp"></i> (19) 99104-6156 - Whatsapp</p>
+        <p><i class="fa-solid fa-phone"></i> (19) 3608-4422 - Administração</p>
+        <p><i class="fa-solid fa-phone"></i> (19) 3608-4969 - Locação</p>
+        <p><i class="fa-solid fa-phone"></i> (19) 99104-7301 - Vendas</p>
+        <p>
+          <i class="fa-solid fa-envelope"></i> contato@centraldeimoveisrp.com.br
+        </p>
+      </div>
+      <div>
+        <h3>Navegação Rápida</h3>
+        <a href="./index.html">Home</a>
+        <a href="./pages/buscarimovel.html">Buscar Imóveis</a>
+        <a href="./pages/anunciar.html">Anunciar Imóvel</a>
+        <a href="./pages/sobre.html">Sobre Nós</a>
+        <a href="./pages/contato.html">Contato</a>
+      </div>
+    </footer>
   </body>
 </html>

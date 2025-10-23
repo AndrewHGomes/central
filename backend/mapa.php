@@ -1,10 +1,10 @@
 <?php
-require 'conexao.php'; 
+require 'conexao.php';
 
 header('Content-Type: application/json');
 
-$cidade = $_GET['cidade'] ?? '';
-$tipo_nome = $_GET['tipo'] ?? '';
+$cidade = isset($_GET['cidade']) ? $_GET['cidade'] : '';
+$tipo_nome = isset($_GET['tipo']) ? $_GET['tipo'] : '';
 
 $sql = "
     SELECT 
@@ -40,12 +40,10 @@ try {
     $stmt = $pdo->prepare($sql);
     $stmt->execute($params);
     $imoveis = $stmt->fetchAll();
-    
+
     // Retorna os imóveis como JSON
     echo json_encode($imoveis);
-
 } catch (\PDOException $e) {
     http_response_code(500);
     echo json_encode(['erro' => 'Erro ao buscar imóveis para o mapa: ' . $e->getMessage()]);
 }
-?>

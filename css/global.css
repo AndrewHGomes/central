@@ -84,6 +84,7 @@ section h2 {
   top: 0;
   bottom: 50%;
   width: 250px;
+  height: 300px;
   transform: translateX(100%);
   visibility: hidden;
   transition: transform 0.3s ease-out, visibility 0.3s ease-out;
@@ -208,27 +209,45 @@ section h2 {
   cursor: pointer;
 }
 
+footer {
+  background-color: var(--preto);
+  color: var(--cinza-escuro);
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer div {
+  display: flex;
+  flex-direction: column;
+}
+
 /* ========== MEDIA QUERIES ========== */
 
 @media (max-width: 990px) {
   #nav-links {
     display: none;
   }
+
+  #aside-menu {
+    height: 100%;
+    bottom: 0;
+    left: unset;
+  }
 }
 
 @media (max-width: 550px) {
-  #aside-menu {
-    bottom: 0;
-    width: 70%;
-    left: unset;
-  }
-
   #nav-menu a {
     font-size: 0;
   }
 
   #nav-menu a .fa-brands.fa-whatsapp {
     font-size: 1.5em;
+  }
+
+  #aside-menu {
+    width: 70%;
   }
 
   section {

@@ -18,7 +18,6 @@ try {
     $imoveis = $stmt->fetchAll();
 
     echo json_encode($imoveis);
-
 } catch (\PDOException $e) {
     http_response_code(500);
     echo json_encode(['erro' => 'Erro ao buscar imóveis: ' . $e->getMessage()]);

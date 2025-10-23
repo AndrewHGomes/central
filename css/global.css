@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+:root {
+  --preto: #2f2f2f;
+  --branco: #fff;
+  --cinza-claro: #dfdfdf;
+  --cinza-escuro: #9f9f9f;
+  --amarelo-escuro: #a06e02;
+  --amarelo-claro: #ffee61;
+  --radius: 5px;
+  --sombra-box: 0 0 8px 2px rgba(0, 0, 0, 0.2);
+  --sombra-box-hover: 0 0 8px 2px rgba(0, 0, 0, 0.5);
+  --sombra-embaixo: 0 2px 8px 2px rgba(0, 0, 0, 0.2);
+  --sombra-texto: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+header {
+  padding: 0.5em;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  background-image: linear-gradient(
+    to right,
+    var(--amarelo-escuro),
+    var(--amarelo-claro)
+  );
+  box-shadow: var(--sombra-embaixo);
+}
+
+header,
+main,
+section,
+footer {
+  width: 100%;
+}
+
+section {
+  padding: 3em 1em;
+}
+
+section h2 {
+  margin-bottom: 0.3em;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+#overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#aside-menu {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  border-radius: var(--radius);
+  padding: 0.5em;
+  z-index: 3;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 50%;
+  width: 250px;
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.3s ease-out, visibility 0.3s ease-out;
+}
+
+#aside-menu.active {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+#aside-menu .fa-square-xmark {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+#aside-menu #menu-lateral {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#aside-menu #menu-lateral a {
+  background-color: transparent;
+  width: 100%;
+  color: var(--preto);
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.8em;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+}
+
+#aside-menu #menu-lateral a:hover {
+  transition: all 0.3s ease;
+  box-shadow: var(--sombra-box);
+  background-image: linear-gradient(
+    to right,
+    var(--amarelo-escuro),
+    var(--amarelo-claro)
+  );
+}
+
+#navegacao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#navegacao > a {
+  width: 10em;
+}
+
+#navegacao > a > img {
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
+  width: 100%;
+}
+
+#nav-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+#nav-links a {
+  color: var(--preto);
+  font-weight: bold;
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 3px;
+}
+
+#nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color: var(--preto);
+  width: 0%;
+  transform-origin: left;
+  transition: width 0.3s ease-in-out;
+}
+
+#nav-links a:hover::after {
+  width: 100%;
+}
+
+#nav-links a:not(:hover)::after {
+  transform-origin: left;
+  transition: width 0.3s ease-in-out, transform-origin 0s 0.3s;
+}
+
+#nav-menu {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+#nav-menu a {
+  color: var(--preto);
+  text-decoration: none;
+  font-size: 0.95em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.3s;
+}
+
+#nav-menu a:hover {
+  opacity: 0.8;
+}
+
+#nav-menu .fa-solid.fa-bars {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+@media (max-width: 990px) {
+  #nav-links {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  #aside-menu {
+    bottom: 0;
+    width: 70%;
+    left: unset;
+  }
+
+  #nav-menu a {
+    font-size: 0;
+  }
+
+  #nav-menu a .fa-brands.fa-whatsapp {
+    font-size: 1.5em;
+  }
+
+  section {
+    padding: 3em 0.5em;
+  }
+}

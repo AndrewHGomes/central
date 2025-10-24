@@ -4,13 +4,13 @@
   background-position: center;
   background-repeat: no-repeat;
   height: 100dvh;
-  padding: 2.5em 0 0 0;
+  padding: 0;
 }
 
 #home-hero #espelho {
   background-color: rgba(0, 0, 0, 0.5);
   height: 100%;
-  padding: 2.5em 5em 0 5em;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;

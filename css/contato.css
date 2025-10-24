@@ -1,0 +1,32 @@
+#contatos {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+#contatos div {
+  background-color: var(--cinza-claro);
+  padding: 0.5em;
+  border-radius: var(--radius);
+  box-shadow: var(--sombra-box);
+  flex: 0 0 300px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+#contatos div:hover {
+  box-shadow: var(--sombra-box-hover);
+  transform: scale(1.02);
+}
+
+#contatos div h3 {
+  color: var(--amarelo-escuro);
+  margin: 0.5em 0;
+}
+
+@media (max-width: 660px) {
+  #contatos div {
+    flex: 1 2 auto;
+  }
+}

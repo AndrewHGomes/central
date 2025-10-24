@@ -74,7 +74,6 @@ function pegarDadosFiltro() {
 // ===== Pegar Dados do Filtro ===== \\
 function gerenciarOportunidadesDeHoje() {
   const divRolar = capturar("#oportunidades-hoje .rolar");
-  console.log(divRolar);
 }
 
 // ===== Chamada das Funções ===== \\

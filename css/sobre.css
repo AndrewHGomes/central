@@ -1,0 +1,59 @@
+#quem-somos {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+#quem-somos p {
+  color: var(--cinza-escuro);
+}
+
+#quem-somos span {
+  font-weight: bold;
+  color: var(--amarelo-escuro);
+}
+
+#diferenciais {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+#diferenciais div {
+  padding: 0.8em;
+  text-align: center;
+  border-radius: var(--radius);
+  box-shadow: var(--sombra-box);
+  flex: 0 0 280px;
+  transition: all 0.3s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+#diferenciais div:hover {
+  box-shadow: var(--sombra-box-hover);
+  transform: translateY(5px);
+}
+
+#diferenciais div i {
+  color: var(--amarelo-escuro);
+  font-size: 3.5em;
+}
+
+#diferenciais div p {
+  color: var(--cinza-escuro);
+}
+
+@media (max-width: 660px) {
+  #quem-somos p {
+    font-size: 1em;
+  }
+  #diferenciais div {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}

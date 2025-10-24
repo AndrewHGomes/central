@@ -6,18 +6,20 @@
 }
 
 #contatos div {
-  background-color: var(--cinza-claro);
   padding: 0.5em;
   border-radius: var(--radius);
   box-shadow: var(--sombra-box);
-  flex: 0 0 300px;
-  transition: all 0.3s ease-in-out;
+  flex: 1 0 290px;
+  transition: all 0.3s;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
 }
 
 #contatos div:hover {
   box-shadow: var(--sombra-box-hover);
-  transform: scale(1.02);
+  transform: translateY(5px);
 }
 
 #contatos div h3 {
@@ -25,8 +27,16 @@
   margin: 0.5em 0;
 }
 
-@media (max-width: 660px) {
+#contatos div i {
+  color: var(--cinza-escuro);
+}
+
+#contatos div p {
+  color: var(--preto);
+}
+
+@media (max-width: 765px) {
   #contatos div {
-    flex: 1 2 auto;
+    flex: 1 1 auto;
   }
 }

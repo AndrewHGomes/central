@@ -1,33 +1,4 @@
-// ===== Funções de Manipulação de DOM ===== \\
-function capturar(seletor, todos = false) {
-  if (todos) {
-    return document.querySelectorAll(seletor);
-  }
-  return document.querySelector(seletor);
-}
-
-function criar(seletor) {
-  return document.createElement(seletor);
-}
-
-// ===== Menu Aside ===== \\
-function abrirFecharAside() {
-  const asideMenu = capturar("#aside-menu");
-  const xMark = capturar("#aside-menu .fa-square-xmark");
-  const menuFaBars = capturar("#nav-menu .fa-bars");
-
-  menuFaBars.addEventListener("click", () => {
-    if (asideMenu.className !== "active") {
-      asideMenu.className = "active";
-    }
-  });
-
-  xMark.addEventListener("click", () => {
-    if (asideMenu.className === "active") {
-      asideMenu.className = "";
-    }
-  });
-}
+import { capturar, criar, abrirFecharAside } from "./global.js";
 
 // ===== Troca de Filtro do Hero Content ===== \\
 function trocarTipoFiltro() {

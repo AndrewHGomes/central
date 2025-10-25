@@ -15,7 +15,7 @@
 
 #diferenciais {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   gap: 1em;
 }
@@ -25,7 +25,7 @@
   text-align: center;
   border-radius: var(--radius);
   box-shadow: var(--sombra-box);
-  flex: 0 0 280px;
+  flex: 1 0 280px;
   transition: all 0.3s;
   cursor: pointer;
   display: flex;
@@ -49,9 +49,14 @@
 }
 
 @media (max-width: 660px) {
+  #quem-somos h2 {
+    font-size: 2em;
+  }
+
   #quem-somos p {
     font-size: 1em;
   }
+
   #diferenciais div {
     flex: 1 1 auto;
     text-align: center;

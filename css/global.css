@@ -8,11 +8,11 @@
   --amarelo-escuro: #a06e02;
   --amarelo-claro: #ffee61;
   --radius: 5px;
-  --sombra-box: 0 0 8px 2px rgba(0, 0, 0, 0.5);
+  --sombra-box: 0 0 8px 2px rgba(0, 0, 0, 0.3);
   --sombra-box-hover: 0 0 8px 2px rgba(0, 0, 0, 0.8);
-  --sombra-embaixo: 0 2px 8px 2px rgba(0, 0, 0, 0.5);
-  --sombra-encima: 0 -2px 8px 2px rgba(0, 0, 0, 0.5);
-  --sombra-texto: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  --sombra-embaixo: 0 2px 8px 2px rgba(0, 0, 0, 0.3);
+  --sombra-encima: 0 -2px 8px 2px rgba(0, 0, 0, 0.3);
+  --sombra-texto: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -29,7 +29,7 @@ body {
 }
 
 header {
-  padding: 0.5em;
+  padding: 0.5em 0.8em;
   position: sticky;
   top: 0;
   right: 0;
@@ -60,7 +60,6 @@ section.section-imagem {
   background-attachment: fixed;
   background-size: cover;
   background-position: bottom;
-  /* opacity: 0.5; */
 }
 
 section h2 {
@@ -97,10 +96,10 @@ section h2 {
   top: 0;
   bottom: 50%;
   width: 250px;
-  height: 300px;
   transform: translateX(100%);
   visibility: hidden;
   transition: transform 0.3s ease-out, visibility 0.3s ease-out;
+  overflow: auto;
 }
 
 #aside-menu.active {
@@ -116,6 +115,13 @@ section h2 {
   cursor: pointer;
 }
 
+#aside-menu .links-media-query {
+  margin-top: 2em;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 #aside-menu #menu-lateral {
   margin-top: 2em;
   display: flex;
@@ -123,25 +129,23 @@ section h2 {
   justify-content: space-between;
 }
 
-#aside-menu #menu-lateral a {
+#aside-menu #menu-lateral a,
+#aside-menu .links-media-query a {
   background-color: transparent;
   width: 100%;
   color: var(--preto);
   font-weight: bold;
   text-decoration: none;
-  padding: 0.8em;
+  padding: 0.5em;
   border-radius: var(--radius);
   transition: all 0.3s ease;
 }
 
-#aside-menu #menu-lateral a:hover {
-  transition: all 0.3s ease;
-  box-shadow: var(--sombra-box);
-  background-image: linear-gradient(
-    to right,
-    var(--amarelo-escuro),
-    var(--amarelo-claro)
-  );
+#aside-menu #menu-lateral a:hover,
+#aside-menu .links-media-query a:hover {
+  color: var(--amarelo-escuro);
+  text-shadow: var(--sombra-texto);
+  transform: scale(1.05);
 }
 
 #navegacao {
@@ -228,16 +232,15 @@ footer {
   box-shadow: var(--sombra-encima);
   padding: 2em 1em;
   display: flex;
-  /* align-items: center; */
   justify-content: space-between;
-  gap: 1.5em;
+  gap: 0.8em;
   flex-wrap: wrap;
 }
 
 footer div {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: 0.4em;
 }
 
 footer div h3 {
@@ -258,6 +261,10 @@ footer .logo {
   width: 6em;
 }
 
+footer .footer-empresa {
+  align-items: center;
+}
+
 /* ========== MEDIA QUERIES ========== */
 
 @media (max-width: 990px) {
@@ -269,6 +276,10 @@ footer .logo {
     height: 100%;
     bottom: 0;
     left: unset;
+  }
+
+  #aside-menu .links-media-query {
+    display: flex;
   }
 }
 
@@ -294,6 +305,10 @@ footer .logo {
 
   section {
     padding: 3em 0.5em;
+  }
+
+  footer .footer-empresa {
+    margin: 0 auto;
   }
 
   footer .direita,

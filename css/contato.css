@@ -9,7 +9,7 @@
   padding: 0.5em;
   border-radius: var(--radius);
   box-shadow: var(--sombra-box);
-  flex: 1 0 290px;
+  flex: 1 0 350px;
   transition: all 0.3s;
   cursor: pointer;
   display: flex;

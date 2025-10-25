@@ -7,13 +7,20 @@
     <link rel="stylesheet" href="./css/global.css" />
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./assets/fontawesome/css/all.min.css" />
-    <script src="./javascript/index.js" defer></script>
+    <script type="module" src="./javascript/index.js" defer></script>
     <title>Home | Central de Imóveis</title>
   </head>
   <body>
     <div id="overlay"></div>
     <aside id="aside-menu">
       <i class="fa-solid fa-square-xmark"></i>
+      <div class="links-media-query">
+        <a href="./index.html">Home</a>
+        <a href="./pages/buscarimovel.html">Buscar Imóveis</a>
+        <a href="./pages/anunciar.html">Anunciar Imóvel</a>
+        <a href="./pages/sobre.html">Sobre Nós</a>
+        <a href="./pages/contato.html">Contato</a>
+      </div>
       <div id="menu-lateral">
         <a href="">Área do Locador</a>
         <a href="">Área do Locatário</a>
@@ -101,7 +108,7 @@
       <section id="destaques-locacao"></section>
     </main>
     <footer>
-      <div>
+      <div class="footer-empresa">
         <img class="logo" src="./assets/ico.png" alt="" />
         <h3>Central de Imóveis</h3>
         <p>CRECI: 29459 J</p>
